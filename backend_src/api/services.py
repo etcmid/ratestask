@@ -57,7 +57,7 @@ class PriceService:
     def get_prices(self, date_from, date_to, origin, destination):
         # SQL query to fetch prices data based on input parameters
         prices_query = """
-        SELECT to_char(d.day, 'YYYY-MM-DD') AS day, ROUND(p.price)
+        SELECT to_char(d.day, 'YYYY-MM-DD') AS day, ROUND(p.price) AS average_price
         FROM (
             SELECT generate_series(%s, %s, '1 day') AS day
         ) d
