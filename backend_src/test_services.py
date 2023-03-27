@@ -14,16 +14,16 @@ test_origin = 'CNSGH'
 test_destination = 'north_europe_main'
 test_db_url = os.environ['DATABASE_URL']
 
-expected = [{'day': '2016-01-01', 'round': Decimal('1077')},
-            {'day': '2016-01-02', 'round': Decimal('1077')},
-            {'day': '2016-01-03', 'round': None},
-            {'day': '2016-01-04', 'round': None},
-            {'day': '2016-01-05', 'round': Decimal('1116')},
-            {'day': '2016-01-06', 'round': Decimal('1117')},
-            {'day': '2016-01-07', 'round': Decimal('1110')},
-            {'day': '2016-01-08', 'round': Decimal('1094')},
-            {'day': '2016-01-09', 'round': Decimal('1094')},
-            {'day': '2016-01-10', 'round': Decimal('1094')}]
+expected = [{'day': '2016-01-01', 'average_price': Decimal('1077')},
+            {'day': '2016-01-02', 'average_price': Decimal('1077')},
+            {'day': '2016-01-03', 'average_price': None},
+            {'day': '2016-01-04', 'average_price': None},
+            {'day': '2016-01-05', 'average_price': Decimal('1116')},
+            {'day': '2016-01-06', 'average_price': Decimal('1117')},
+            {'day': '2016-01-07', 'average_price': Decimal('1110')},
+            {'day': '2016-01-08', 'average_price': Decimal('1094')},
+            {'day': '2016-01-09', 'average_price': Decimal('1094')},
+            {'day': '2016-01-10', 'average_price': Decimal('1094')}]
 
 
 
