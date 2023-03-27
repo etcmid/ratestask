@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  web:
+    build: ./backend_src
+    command: python api.py
+    ports:
+      - "5050:5000"
+    depends_on:
+      - db
+    environment:
+      FLASK_APP: api.py
+      FLASK_ENV: development
+      DATABASE_URL: postgresql://postgres:password@db:5432/mydatabase
+    restart: unless-stopped
+  db:
+    build: ./db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_DB: mydatabase
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  db_data:
